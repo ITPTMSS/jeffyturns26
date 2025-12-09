@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To The Man</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====================== MUSIC AUTOPLAY ====================== -->
+<audio id="bgMusic" loop>
+    <source src="assets/sade.mp3" type="audio/mp3">
+</audio>
+
+<script>
+    function startMusic() {
+        const audio = document.getElementById("bgMusic");
+        audio.play();
+        document.removeEventListener("click", startMusic);
+    }
+    document.addEventListener("click", startMusic); 
+</script>
+
+
+<!-- ====================== MAIN CARD ====================== -->
+<div class="card">
+
+    <h1 class="title">To The Man</h1>
+
+    <p class="subtitle">
+        Who Makes My Life Easier,<br>
+        Brighter, and Full of Love.
+    </p>
+
+    <p class="highlight">Happy Level Up, Jeffy ♡</p>
+
+    <p class="footer-text">Cheers For The New Chapter</p>
+
+    <button id="nextBtn" class="surprise-btn">Tap For Surprise ♡</button>
+</div>
+
+
+<!-- ====================== JS FOR BUTTON ====================== -->
+<script>
+document.getElementById("nextBtn").addEventListener("click", () => {
+    window.location.href = "letter.html"; // → pindah ke halaman berikutnya
+});
+</script>
+
+<img src="assets/cart.png" class="car" alt="car">
+
+</body>
+</html>

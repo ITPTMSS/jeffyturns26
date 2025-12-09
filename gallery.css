@@ -1,0 +1,50 @@
+/* POLAROID FRAME STYLE */
+body {
+    background: linear-gradient(120deg, #1d3f72, #3b5fb8);
+    min-height: 100vh;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 30px; /* jarak antar foto */
+    justify-items: center; /* biar polaroidnya center */
+    padding: 20px;
+}
+
+.polaroid {
+    background: #fff;
+    width: 220px;
+    padding: 10px 10px 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transform: rotate(-3deg);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.polaroid:hover {
+    transform: scale(1.08) rotate(0deg);
+    box-shadow: 0 12px 25px rgba(59, 130, 246);
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+}
+
+.polaroid p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+}

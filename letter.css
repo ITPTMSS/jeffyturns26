@@ -1,0 +1,163 @@
+/* Background F1 */
+.f1-bg {
+    background: linear-gradient(120deg, #1d3f72, #3b5fb8);
+    min-height: 100vh;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Grid untuk 4 letter */
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* Card surat */
+.letter-card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    height: 300px;              /* ⭐ tinggi tetap */
+    display: flex;              /* ⭐ flexbox */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;  /* ⭐ biar button tetap di bawah */
+}
+/* Amplop */
+.envelope {
+    width: 120px;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Tombol */
+.f1-btn {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.f1-btn:hover {
+    background: #3b5fb8;
+}
+
+/* Text surat */
+.letter-text {
+    margin-top: 15px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+#loveBtn {
+    margin-top: 30px;
+    padding: 12px 32px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+#loveBtn:hover {
+    transform: scale(1.06);
+    background: #3b5fb8;
+}
+
+/* MODAL WRAPPER */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+/* HILANGKAN SAAT TERTUTUP */
+.hidden {
+    display: none;
+}
+
+/* MODAL BOX */
+.modal-content {
+    background: white;
+    color: black;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;   /* 🔥 penting supaya bisa scroll */
+    padding: 25px;
+    border-radius: 15px;
+    overflow-y: auto;   /* 🔥 ini bikin ISI-nya scroll */
+    font-size: 15px;
+    white-space: pre-line;
+    line-height: 1.6; 
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.close-btn {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
