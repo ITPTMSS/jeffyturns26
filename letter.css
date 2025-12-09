@@ -33,11 +33,12 @@
     border-radius: 15px;
     backdrop-filter: blur(6px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    height: 300px;              /* ⭐ tinggi tetap */
+    height: 200px;              /* ⭐ tinggi tetap */
     display: flex;              /* ⭐ flexbox */
     flex-direction: column;
     align-items: center;
     justify-content: space-between;  /* ⭐ biar button tetap di bawah */
+
 }
 /* Amplop */
 .envelope {
@@ -160,4 +161,28 @@
 @keyframes pop {
     from { transform: scale(0.8); opacity: 0; }
     to   { transform: scale(1); opacity: 1; }
+}
+
+.intro-message {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 18px 25px;
+
+    width: 80%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(6px);
+    border-radius: 18px;
+
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    white-space: pre-line;
+    line-height: 1,5;
 }
