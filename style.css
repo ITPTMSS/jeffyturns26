@@ -159,45 +159,53 @@ body::after {
 }
 
 :root{
-  --car-w: 180px;       /* lebar mobil — ubah kalau perlu */
-  --off: calc(var(--car-w) * 1); /* jarak off-screen */
+  --car-w: 180px;
+  --off: calc(var(--car-w) * 1);
 }
 
-/* gaya dasar mobil */
-.car {
+/* WRAPPER bergerak kiri → kanan → kiri */
+.car-wrap {
     position: fixed;
-    bottom: 20px;
-    left: calc(-1 * var(--off));   /* mulai sedikit di luar kiri */
+    bottom: -50px;
+    left: calc(-1 * var(--off));
     width: var(--car-w);
-    image-rendering: pixelated;
-    /* atur durasi & easing di sini */
-    animation: drive 10s linear infinite;
+    animation: drive 15s linear infinite;
 }
 
-/* keyframes:
-   0%   -> start (kiri luar)
-   0..49% -> bergerak ke kanan
-   49..51% -> jeda  (di kanan luar)
-   51..100% -> kembali ke kiri
-*/
+/* MOBIL – ini yang flip */
+.car {
+    width: 100%;
+    image-rendering: pixelated;
+    transition: transform 0.2s;
+}
+
+/* TEKS – tidak pernah kebalik */
+.car-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: red;
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
+    transform: scaleX(1) !important;
+}
+
+/* ANIMASI – hanya gerak wrapper, tidak ada flip */
 @keyframes drive {
     0% {
         left: calc(-1 * var(--off));
-        transform: scaleX(1);   /* menghadap kanan saat maju */
     }
 
     49% {
         left: calc(100vw + var(--off));
-        transform: scaleX(1);   /* sampai kanan, masih menghadap kanan */
     }
 
     51% {
         left: calc(100vw + var(--off));
-        transform: scaleX(-1);  /* flip untuk kembali ke kiri */
     }
 
     100% {
         left: calc(-1 * var(--off));
-        transform: scaleX(-1);  /* sampai kiri, masih menghadap kiri */
     }
 }
