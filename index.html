@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,11 @@
 <!-- ====================== MUSIC AUTOPLAY ====================== -->
 <audio id="bgMusic" loop>
     <source src="assets/sade.mp3" type="audio/mp3">
+</audio>
+
+<!-- ENGINE SOUND WHEN CAR CLICKED -->
+<audio id="engineSound">
+    <source src="assets/engine.mp3" type="audio/mp3">
 </audio>
 
 <script>
@@ -41,14 +46,29 @@
 </div>
 
 
+<!-- ====================== MOVING CAR + TEXT ====================== -->
+
+<div class="car-wrap">
+    <p class="car-text">Vroom me, Jeffy!</p>
+    <img src="assets/cart.png" class="car" id="carImg" alt="car">
+</div>
+
+
+
 <!-- ====================== JS FOR BUTTON ====================== -->
-<script>
+<script> 
 document.getElementById("nextBtn").addEventListener("click", () => {
-    window.location.href = "letter.html"; // → pindah ke halaman berikutnya
+    window.location.href = "letter.html";
+});
+
+// Play engine sound when cart clicked
+document.getElementById("carImg").addEventListener("click", () => {
+    const engine = document.getElementById("engineSound");
+    engine.currentTime = 0;
+    engine.play();
 });
 </script>
 
-<img src="assets/cart.png" class="car" alt="car">
 
 </body>
 </html>
